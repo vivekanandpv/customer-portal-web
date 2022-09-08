@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CustomerViewModel } from '../_models/customer.models';
 import { RestService } from '../_services/rest.service';
@@ -11,7 +12,7 @@ import { RestService } from '../_services/rest.service';
 export class HomeComponent implements OnInit {
   customers: Observable<CustomerViewModel[]>;
 
-  constructor(private restService: RestService) {
+  constructor(private restService: RestService, private router: Router) {
     this.customers = this.restService.read<CustomerViewModel[]>(
       'http://localhost:8080/api/v1/customers'
     );
@@ -20,6 +21,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   add() {
-    console.log('Add clicked');
+    this.router.navigate(['/new-customer']);
   }
 }
