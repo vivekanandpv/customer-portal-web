@@ -5,6 +5,14 @@
   <div class="form-group my-3">
     <label>First Name</label>
     <input type="text" class="form-control" [formControl]="firstName" />
+    <div *ngIf="firstName.touched">
+      <p
+        class="text-danger"
+        *ngIf="firstName.errors && firstName.errors['required']"
+      >
+        Required
+      </p>
+    </div>
   </div>
   <div class="form-group my-3">
     <label>Last Name</label>
