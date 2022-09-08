@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let c of customers | async">
+    <tr *ngFor="let c of customers | async" [class.text-secondary]="!c.active">
       <td>{{ c.id }}</td>
       <td>{{ c.firstName }} {{ c.lastName }}</td>
       <td>{{ c.accounts?.length }}</td>
