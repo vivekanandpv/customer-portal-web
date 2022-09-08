@@ -11,7 +11,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let c of customers | async">
+    <tr
+      *ngFor="let c of customers | async"
+      [routerLink]="['/new-account', c.id]"
+    >
       <td>{{ c.id }}</td>
       <td>{{ c.firstName }} {{ c.lastName }}</td>
       <td>{{ c.accounts?.length }}</td>
