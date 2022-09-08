@@ -1,1 +1,16 @@
-<p>home works!</p>
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name of Customer</th>
+      <th>Accounts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of customers | async">
+      <td>{{ c.id }}</td>
+      <td>{{ c.firstName }} {{ c.lastName }}</td>
+      <td>{{ c.accounts?.length }}</td>
+    </tr>
+  </tbody>
+</table>
