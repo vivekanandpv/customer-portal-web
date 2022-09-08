@@ -5,6 +5,7 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'customer-details/:id',
     component: CustomerDetailsComponent,
+  },
+  {
+    path: 'update-customer/:id',
+    component: UpdateCustomerComponent,
   },
   {
     path: 'new-customer',

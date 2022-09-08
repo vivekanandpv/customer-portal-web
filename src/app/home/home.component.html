@@ -24,10 +24,16 @@
           Show Details
         </button>
         <button
-          class="btn btn-primary btn-sm"
+          class="btn btn-primary btn-sm me-3"
           [routerLink]="['/new-account', c.id]"
         >
           Add Account
+        </button>
+        <button
+          class="btn btn-info btn-sm"
+          [routerLink]="['/update-customer', c.id]"
+        >
+          Edit
         </button>
       </td>
     </tr>
