@@ -8,16 +8,28 @@
       <th>Id</th>
       <th>Name of Customer</th>
       <th>Accounts</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr
-      *ngFor="let c of customers | async"
-      [routerLink]="['/new-account', c.id]"
-    >
+    <tr *ngFor="let c of customers | async">
       <td>{{ c.id }}</td>
       <td>{{ c.firstName }} {{ c.lastName }}</td>
       <td>{{ c.accounts?.length }}</td>
+      <td>
+        <button
+          class="btn btn-warning btn-sm me-3"
+          [routerLink]="['/customer-details', c.id]"
+        >
+          Show Details
+        </button>
+        <button
+          class="btn btn-primary btn-sm"
+          [routerLink]="['/new-account', c.id]"
+        >
+          Add Account
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
