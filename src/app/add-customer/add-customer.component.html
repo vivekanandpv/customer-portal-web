@@ -1,18 +1,18 @@
 <h3>Add New Customer</h3>
 <hr />
 
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form-group my-3">
     <label>First Name</label>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" [formControl]="firstName" />
   </div>
   <div class="form-group my-3">
     <label>Last Name</label>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" [formControl]="lastName" />
   </div>
   <div class="form-group my-3">
     <label>Email</label>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" [formControl]="email" />
   </div>
   <button class="btn btn-success my-3">Submit</button>
 </form>

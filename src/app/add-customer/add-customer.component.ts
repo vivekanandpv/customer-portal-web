@@ -50,7 +50,7 @@ export class AddCustomerComponent implements OnInit {
     if (this.form.valid) {
       this.restService
         .create<CustomerCreateViewModel, CustomerViewModel>(
-          'http://localhost:8080/v1/customers',
+          'http://localhost:8080/api/v1/customers',
           this.form.value
         )
         .subscribe((res) => {
