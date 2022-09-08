@@ -1,1 +1,40 @@
-<p>customer-details works!</p>
+<h3>Customer Details</h3>
+
+<ng-container *ngIf="customer$ | async as customer">
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr>
+        <th>Id</th>
+        <td>{{ customer.id }}</td>
+      </tr>
+      <tr>
+        <th>First Name</th>
+        <td>{{ customer.firstName }}</td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td>{{ customer.lastName }}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ customer.email }}</td>
+      </tr>
+      <tr>
+        <th>No of Accounts</th>
+        <td>{{ customer.accounts?.length }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 class="my-3">Accounts</h4>
+
+  <table class="table table-bordered table-sm">
+    <tbody>
+      <tr *ngFor="let a of customer.accounts; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ a.type }}</td>
+        <td>{{ a.active ? "Active" : "Inactive" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
